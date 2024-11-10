@@ -15,7 +15,10 @@ import gleam/string
 /// the distributed program that last set the value. 
 /// This id might be the computer hostname or some other unique id.
 ///
-pub opaque type LWWRegister(value) {
+/// This type is not opaque, but you should prefer using the functions provided
+/// to interact with it rather than modifying the values directly.
+///
+pub type LWWRegister(value) {
   LWWRegister(value: value, timestamp: Int, id: String)
 }
 
